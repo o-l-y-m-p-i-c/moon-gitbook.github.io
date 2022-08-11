@@ -1,0 +1,287 @@
+/* @import url(https://allfont.ru/allfont.css?fonts=courier-new); */
+
+
+
+@font-face {
+    font-family: 'Consolas';
+    src: url('../../assets/fonts/consolas.ttf') ;
+}
+@font-face {
+    font-family: 'Courier New Bold';
+    src: url('../../assets/fonts/courier-new.ttf') ;
+}
+@font-face {
+    font-family: 'Courier New';
+    src: url('../../assets/fonts/ofont.ru_Courier New.ttf') ;
+}
+@font-face {
+    font-family: 'Helvetica Bold';
+    src: url('../../assets/fonts/helvetica_bold.otf') format("opentype");
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../../assets/fonts/helvetica_light.otf') format("opentype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../../assets/fonts/helvetica_regular.otf') format("opentype");
+    font-weight: 400;
+}
+:root{
+    /* main */
+
+    --book-summary-width:300px;
+
+    --main-theme-color:#2d3143;
+    --main-text-color:#ffffff;
+    --main-rev-text-color:#000000;
+
+    --main-accent-color:#00ffd1;
+
+    /* aside */
+    --aside-bg-color: #191d1c;
+    --aside-text-color: #bcc1d2;
+    --main-font-family : "Courier New";
+
+    /* aside links */
+
+    --aside-font-size-li: 16px;
+    --aside-bg-color-li: #252737;
+    --active-bg-color-li: #252737;
+    --aside-font-weight-li: 600;
+
+    /* aside headers */
+
+    --aside-font-size-header: 18px;
+    --aside-font-weight-header: 600;
+    --aside-font-color-header: 252737;
+
+    /* body */
+    --body-font-family: "Courier New";
+    --body-header-weight: 700;
+    --body-p-weight: 700;
+    --body-bg:#1c1f2b;
+    --body-inner-bg:#1c1f2b;
+    --body-photo-align:center;
+    
+    --header-font: 'Courier New Bold';
+    
+    --input-text-color: var(--main-rev-text-color);
+    --input-text-bg: red;
+}
+#book-search-input input, #book-search-input input:focus, #book-search-input input:hover{
+    color:var(--input-text-color);
+    font-family: var(--body-font-family);
+}
+
+input::placeholder{
+    font-family: var(--body-font-family);
+    color:var(--input-text-color);
+    letter-spacing: .2px;
+    opacity:0.7
+}
+.markdown-section{
+    color:unset
+}
+
+
+/* with out class color-theme  */
+
+.book-body{
+    background-color:unset!important;
+}
+h1,h2,h3,h4,h5{
+    color:var(--main-text-color)
+}
+p,a,article,div,span{
+    color: var(--main-text-color)
+}
+
+/* book-summary */
+
+.book-summary{
+    background-color: var(--aside-bg-color);
+    
+    /* font-weight: 700; */
+    color: #364149;
+    border-right: 1px solid rgba(0,0,0,.07);
+    box-sizing: border-box;
+    font-size: 14px;
+    letter-spacing: .2px;
+}
+.book .book-summary .chapter.expanded > .articles{
+    
+    /* max-height: 200px; */
+}
+
+.exc-trigger.fa{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 100% !important; 
+    height: 100%;
+}
+.book .book-summary .exc-trigger::before{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform:translateY(-50%);
+}
+.book .book-summary .chapter > .articles{
+    display: block !important;
+    transition: max-height 0.1s linear;
+}
+.book-summary ul.summary li a, 
+.book-summary ul.summary li span, 
+.book-summary ul.summary li.header{
+    font-size: 14px;
+    font-family: var(--main-font-family);
+    color: #fff;
+    padding: 10px 15px;
+    padding-right:30px ;
+    
+}
+.js-toolbar-action.font-settings{
+    display: none !important;
+}
+/* headers with dropdown */
+.book-summary ul.summary li span, 
+.book-summary ul.summary li[data-level="1.1"] a{
+    font-size: 15x;
+    /* font-family: var( --header-font); */
+    font-weight: 700;
+     position: relative;
+}
+.book-summary ul.summary li.active{
+    /* position: relative; */
+    background-color: #000000;
+}
+.book-summary ul.summary li a:hover, .book-summary ul.summary li span:hover{
+    background-color: #000000;
+}
+.book-body{
+    background-color:var(--main-theme-color) !important;
+    background-image: url('../../assets/images/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%  auto ;
+}
+.book-summary ul.summary li.active::before{
+    /* content:'';
+    position: absolute;
+    width: var(--book-summary-width);
+    height: 100%;
+    background-color: #000000;
+    right:0px; */
+}
+.book-summary ul.summary li.active > a{
+    font-size: 14px;
+    /* line-height: 20px; */
+    color: #00ffd1;
+    letter-spacing: .2px;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+    /* overflow: hidden; */
+}
+header{
+    flex-grow: 0;
+}
+.book{
+    flex-grow: 1;
+}
+
+.book-summary ul.summary li.divider{
+    display:none !important
+}
+.gitbook-link{
+    display: none !important;
+}
+.header{
+    background-color:var(--aside-bg-color);
+}
+.navigation__bar{
+
+}
+.navigation__list{
+    margin: 0;
+    padding: 0px 20px;
+    display:flex;
+    column-gap: 5px;
+    justify-content:center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.navigation__item{
+    list-style: none;
+}
+.navigation__link{
+    color: var(--main-text-color);
+    text-decoration: none;
+    padding: 15px 10px;
+    display: inline-block;
+    font-family: var(--body-font-family);
+    transition: color 0.2s ease-in-out;
+}
+.navigation__link:hover{
+    /* color: var(--main-accent-color); */
+    text-decoration: underline;
+}
+/* body */
+
+.markdown-section p , 
+.markdown-section article,
+.markdown-section a {
+    font-family: var(--body-font-family);
+}
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5{
+    /* font-weight: 700; */
+    font-family: var(--body-font-family);
+}
+
+.markdown-section a{
+    letter-spacing: .2px;
+    outline: 0;
+    text-decoration: underline;
+    color: #00ffd1;
+    font-weight: 800;
+    line-height: 18px;
+    text-align: justify;
+    letter-spacing: .2px;
+}
+.markdown-section pre{
+    background-color:unset !important;
+}
+.markdown-section code{
+    background-color: #434343;
+    padding: .2em;
+    margin: 0;
+    font-size: .85em;
+    font-family: "Consolas";
+    direction: ltr;
+    letter-spacing: .2px;
+}
+.markdown-section table tr, .markdown-section table th{
+    background-color:unset !important;
+}
+.markdown-section b, .markdown-section strong{
+    font-weight: 700;
+}
+.markdown-section li::marker{
+    font-family: "Courier New"
+}
+.book-logo img{
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+    .book-body{
+        background-image: url('../../assets/images/bg-mobile.png');
+    }
+}
