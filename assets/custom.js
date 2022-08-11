@@ -8,10 +8,40 @@ const NAVLINKS = [
         linkURI:'https://moonrabbit.com/technology/'
     },
     {
+        linkName:'Community',
+        linkURI:'https://moonrabbit.com/community/'
+    },
+    {
+        linkName:'Hyperaccelerator',
+        linkURI:'https://moonrabbit.com/accelerator/'
+    },
+    {
+        linkName:'Blog',
+        linkURI:'https://moonrabbit.com/blog/'
+    },
+    {
         linkName:'Library',
         linkURI:'https://dev.hole.moonrabbit.com/'
-    }
+    },
+    {
+        linkName:'NFT',
+        linkURI:'https://nft.moonrabbit.com/'
+    },
+    {
+        linkName:'DEFI',
+        linkURI:'https://defi.moonrabbit.com/'
+    },
+    {
+        linkName:'DEX',
+        linkURI:'https://dex.moonrabbit.com/'
+    },
+    {
+        linkName:'Rabbit Hole',
+        linkURI:'https://hole.moonrabbit.com/'
+    },
 ]
+
+const summary = document.querySelector('.book-summary')
 
 function createHeader(navArr) {
     const header = document.createElement('header');
@@ -46,8 +76,8 @@ function createNav(navArr) {
 
             navItem.appendChild(navLink)
             navList.appendChild(navItem)
-            nav.appendChild(navList)
         } 
+        nav.appendChild(navList)
     }
     return nav
 }
@@ -56,13 +86,21 @@ function addHeader() {
     const body = document.body
     const header = createHeader(null)
     const navigation = createNav(NAVLINKS)
+    const openMenuBtn = document.createElement('div')
+    openMenuBtn.classList.add('menu_open_btn')
+    openMenuBtn.innerHTML = 'Open main menu'
+    const logo = document.createElement('a')
+    logo.href = "https://moonrabbit.com/"
+    logo.classList.add('menu_logo')
+    header.appendChild(logo)
+    header.appendChild(openMenuBtn)
     header.appendChild(navigation)
     body.appendChild(header)
     findAndSwap(body)
 }
 
 function swap (node1, node2) {
-    node1.before(node2);
+    // node1.before(node2);
 }
 function findAndSwap(parent){
     const parentChilds = parent.children
@@ -82,4 +120,12 @@ function findNode(parent,childClassName){
     }
     return child
 }
-addHeader()
+
+
+window.onload = () => {
+    addHeader()
+    document.querySelector('.menu_open_btn').onclick = (e) => {
+        e.currentTarget.classList.toggle('active')
+    }
+    
+}
