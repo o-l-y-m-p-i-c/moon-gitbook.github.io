@@ -120,10 +120,22 @@ function findNode(parent,childClassName){
     }
     return child
 }
+function createParticles(){
+    const particleContainer = document.createElement('div')
+    particleContainer.classList.add("particle-container")
+    particleContainer.classList.add("left-top")
 
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div')
+        particle.classList.add("particle")
+        particleContainer.appendChild(particle)
+    }
+    document.body.appendChild(particleContainer)
+}
 
 window.onload = () => {
     addHeader()
+    createParticles()
     document.querySelector('.menu_open_btn').onclick = (e) => {
         e.currentTarget.classList.toggle('active')
     }
