@@ -157,6 +157,7 @@ p,a,article,div,span{
     background: linear-gradient(rgba(255,255,255,0) ,var(--aside-bg-color));
     left: 0;
     bottom: 0;
+    pointer-events: none;
     /* top: calc(100% - 50px); */
 }
 .book-summary .navigation__bar.mobile{
@@ -169,6 +170,7 @@ p,a,article,div,span{
     order: 2;
 }
 .book-summary nav[role="navigation"]{
+    height:100%;
     order: 4;
 }
 .book .book-summary .chapter.expanded > .articles{
