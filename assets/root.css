@@ -40,7 +40,7 @@
     --main-accent-color:#00ffd1;
 
     /* aside */
-    --aside-bg-color: rgba(25, 29, 28,0.9);
+    --aside-bg-color: rgb(45, 49, 67,0.8);
     --aside-text-color: #bcc1d2;
     --main-font-family : "Courier New";
 
@@ -87,13 +87,16 @@
 }
 input::placeholder{
     font-family: var(--body-font-family);
-    color:var(--input-text-color);
+    color: rgba(255, 255, 255, 0.7);
     letter-spacing: .2px;
     opacity:0.7
 }
 .markdown-section{
     color:unset
 }
+/* .book-summary ul.summary{
+    padding-bottom: 100px;
+} */
 body{
     background-image: url('../../assets/images/light-bg.png');
     background-repeat: no-repeat;
@@ -114,7 +117,23 @@ p,a,article,div,span{
 }
 
 /* book-summary */
-
+.book-summary #book-search-input{
+    background: none !important;
+    border: none !important;
+    padding: 0px;
+    margin-bottom: 25px;
+}
+.book-summary #book-search-input input{
+    background: rgba(25,29,28,.5);
+    border: 1px solid #eefffc;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 4px;
+    height: 32px;
+    width: 89%;
+    margin: 0 15px 0px;
+    padding-left: 16px;
+}
 .book-summary{
     background-color: var(--aside-bg-color);
     
@@ -128,7 +147,18 @@ p,a,article,div,span{
     display: flex;
     flex-direction: column;
 }
-
+.book-summary:after {
+    content:"";
+    order: 99999;
+    position: sticky;
+    min-height: 150px;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(rgba(255,255,255,0) ,var(--aside-bg-color));
+    left: 0;
+    bottom: 0;
+    /* top: calc(100% - 50px); */
+}
 .book-summary .navigation__bar.mobile{
     order: 3;
 }
@@ -186,10 +216,10 @@ p,a,article,div,span{
 }
 .book-summary ul.summary li.active{
     /* position: relative; */
-    background-color: rgba(0, 0,0, 0.4);
+    background-color: #252737;
 }
 .book-summary ul.summary li a:hover, .book-summary ul.summary li span:hover{
-    background-color: rgba(0, 0,0, 0.4);
+    background-color: #252737;
 }
 .book-body{
     background-color:rgba(29, 41, 52,0.8)!important;
