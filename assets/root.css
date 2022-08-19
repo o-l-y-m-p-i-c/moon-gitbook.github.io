@@ -411,9 +411,14 @@ header{
         height: 46px;
     }
     .navigation__bar{
-        background-color: rgba(0, 0, 0, 1);
+        background-image: url('../../assets/images/light-bg.png');
+        background-repeat: no-repeat;
+        background-size: full;
+        background-color: var(--main-theme-color);
+        background-position-y: -55px ;
         max-height: calc(100vh - 46px);
         overflow-y: auto;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0,0.7)
     }
     .book.with-summary ~ .header {
         left: 0px;

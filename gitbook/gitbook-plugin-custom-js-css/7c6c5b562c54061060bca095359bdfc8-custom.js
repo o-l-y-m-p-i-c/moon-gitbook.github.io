@@ -39,6 +39,7 @@ const NAVLINKS = [
         linkName:'Rabbit Hole',
         linkURI:'https://hole.moonrabbit.com/'
     },
+    
 ]
 
 const summary = document.querySelector('.book-summary')
