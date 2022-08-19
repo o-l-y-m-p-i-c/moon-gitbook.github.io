@@ -21,7 +21,7 @@ const NAVLINKS = [
     },
     {
         linkName:'Library',
-        linkURI:'https://dev.hole.moonrabbit.com/'
+        linkURI:'https://lib.moonrabbit.com/'
     },
     {
         linkName:'NFT',

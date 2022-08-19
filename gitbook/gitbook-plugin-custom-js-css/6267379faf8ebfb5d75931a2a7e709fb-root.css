@@ -1,6 +1,9 @@
 /* @import url(https://allfont.ru/allfont.css?fonts=courier-new); */
 
-
+@font-face {
+    font-family: 'SpaceMono-Bold';
+    src: url('../../assets/fonts/SpaceMono-Bold.ttf') ;
+}
 
 @font-face {
     font-family: 'Consolas';
@@ -143,11 +146,11 @@ p,a,article,div,span{
     box-sizing: border-box;
     font-size: 14px;
     letter-spacing: .2px;
-
+    padding-bottom: 150px;
     display: flex;
     flex-direction: column;
 }
-.book-summary:after {
+/* .book-summary:after {
     content:"";
     order: 99999;
     position: sticky;
@@ -159,7 +162,7 @@ p,a,article,div,span{
     bottom: 0;
     pointer-events: none;
     /* top: calc(100% - 50px); */
-}
+} */
 .book-summary .navigation__bar.mobile{
     order: 3;
 }
@@ -212,8 +215,11 @@ p,a,article,div,span{
 .book-summary ul.summary li span, 
 .book-summary ul.summary li[data-level="1.1"] a{
     font-size: 15x;
-    /* font-family: var( --header-font); */
+    font-family: var( --body-font-family);
+    /* font-family: 'SpaceMono-Bold'; */
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .2px;
      position: relative;
 }
 .book-summary ul.summary li.active{
@@ -305,6 +311,7 @@ header{
     box-sizing: border-box;
 }
 .page-inner{
+    max-width: 1200px;
     width:80%;
 }
 .navigation__item{
@@ -404,7 +411,7 @@ header{
         height: 46px;
     }
     .navigation__bar{
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 1);
         max-height: calc(100vh - 46px);
         overflow-y: auto;
     }
@@ -465,6 +472,10 @@ header{
 }
 .markdown-section table tr, .markdown-section table th{
     background-color:unset !important;
+}
+.markdown-section table{
+    display: block;
+    overflow:auto;
 }
 .markdown-section b, .markdown-section strong{
     font-weight: 700;
